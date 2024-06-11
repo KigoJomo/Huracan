@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h3>SP40</h3>
+        </div>
+
+        <div class="left">
+            <span class="material-symbols-outlined">person</span>
+            <span class="icon">1</span>
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+    </header>
+
+    <section id="hero">
+        <svg id="mySVG">
+        </svg>
+
+        <h1 id="hero-title">huracan</h1>
+    </section>
+
+    <script src="" async defer></script>
+    <script>
+        const svg = document.getElementById("mySVG");
+        const points = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // Define polygon points
+
+        // Create a polygon element
+        const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        polygon.setAttribute("points", points.join(" "));
+        polygon.setAttribute("fill", "transparent");
+        polygon.setAttribute("stroke", "white");
+        polygon.setAttribute("stroke-width", "1");
+
+        // Append the polygon to the SVG
+        svg.appendChild(polygon);
+
+        // Function to update polygon points dynamically (e.g., on window resize)
+        function updatePolygon() {
+            const newWidth = svg.clientWidth; // Get current SVG width
+            const newHeight = svg.clientHeight; // Get current SVG height
+
+            // Update points based on percentages of the new dimensions
+            const newPoints = [
+                newWidth * 0,
+                newHeight * 1,
+
+                newWidth * 1,
+                newHeight * 1,
+
+                newWidth * 1,
+                newHeight * 0.11,
+
+                newWidth * 0.87,
+                newHeight * 0.11,
+
+                newWidth * 0.83,
+                newHeight * 0,
+
+                newWidth * 0.09,
+                newHeight * 0,
+
+                newWidth * 0.05,
+                newHeight * 0.11,
+
+                newWidth * 0, // top left
+                newHeight * 0.11
+            ];
+
+            polygon.setAttribute("points", newPoints.join(" "));
+        }
+
+        // Call updatePolygon initially and on window resize
+        updatePolygon();
+        window.addEventListener("resize", updatePolygon);
+        document.addEventListener("DOMContentLoaded", updatePolygon);
+    </script>
+</body>
+
+</html>
