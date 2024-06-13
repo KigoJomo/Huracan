@@ -1,0 +1,92 @@
+
+
+cars container
+    car * 5
+        car-details
+            car-detail
+                h4.feature
+                p.value
+
+        desc
+            h4
+            p
+
+
+<div class="cars-container">
+    <div class="car">
+        <div class="car-details">
+            <div class="car-detail">
+                <h4 class="feature">top speed</h4>
+                <p class="value">250 mph (402 km/h)</p>
+            </div>
+            <div class="car-detail">
+                <h4 class="feature">0-60 mph</h4>
+                <p class="value">2.5 seconds</p>
+            </div>
+            <div class="car-detail">
+                <h4 class="feature">power</h4>
+                <p class="value">887 hp (661 kw)</p>
+            </div>
+            <div class="car-detail">
+                <h4 class="feature">engine</h4>
+                <p class="value">4.6 liter v8 hybrid</p>
+            </div>
+        </div>
+
+        <div class="desc">
+            <h4>the pinnacle of automotive excellence.</h4>
+            <p>
+                Every vehicle that bears the apex badge is a testament to our commitment to pushing the boundaries of performance, design, and technology.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+bottom:
+    indicators
+        indicator * 5
+    CTA
+        .button
+            p
+        .linker
+        .button
+    scroll-buttons
+        button
+        button
+
+<div class="bottom">
+    <div class="indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+    </div>
+
+    <a href="" class="CTA">
+        <div class="button">
+            <p>book a test drive</p>
+        </div>
+        <span class="linker"></span>
+        <div class="button material-symbols-outlined">arrow_outward</div>
+    </a>
+
+    <div class="scroll-buttons">
+        <button class="material-symbols-outlined">north</button>
+        <button class="material-symbols-outlined">south</button>
+    </div>
+</div>
+
+
+
+After fetching cars:
+for each car:
+    1. create a car div, add necessary details
+    2. add car div to the cars container
+    3. create a new indicator span, add class active to the first indicator
+
+add event listener for cars-container scroll or scroll-button click
+    1. update indicators accordingly (add class active to one and remove from others)
+    2. update the hero section background to the image of the car in view, i.e, background: url('image url') center/cover no-repeat;

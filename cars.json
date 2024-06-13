@@ -1,0 +1,47 @@
+[
+  {
+    "topSpeed": "250 mph (402 km/h)",
+    "zeroToSixty": "2.5 seconds",
+    "power": "887 hp (661 kw)",
+    "engine": "4.6 liter v8 hybrid",
+    "tagLine": "the pinnacle of automotive excellence.",
+    "description": "Every vehicle that bears the apex badge is a testament to our commitment to pushing the boundaries of performance, design, and technology.",
+    "image": "./images/huracan.jpeg"
+  },
+  {
+    "topSpeed": "236 mph (380 km/h)",
+    "zeroToSixty": "3.2 seconds",
+    "power": "754 hp (563 kw)",
+    "engine": "5.2 liter v10",
+    "tagLine": "Unleash the legend.",
+    "description": "A timeless design that embodies power and grace. This iconic car delivers a thrilling driving experience.",
+    "image": "./images/tributo.jpeg"
+  },
+  {
+    "topSpeed": "205 mph (330 km/h)",
+    "zeroToSixty": "4.5 seconds",
+    "power": "523 hp (390 kw)",
+    "engine": "3.0 liter twin-turbo v6",
+    "tagLine": "Pure driving pleasure.",
+    "description": "This meticulously crafted sports car offers exceptional handling and exhilarating performance, making every drive unforgettable.",
+    "image": "./images/m4.jpeg"
+  },
+  {
+    "topSpeed": "149 mph (240 km/h)",
+    "zeroToSixty": "7.8 seconds",
+    "power": "268 hp (200 kw)",
+    "engine": "2.0 liter turbocharged i4",
+    "tagLine": "The thrill of electric performance.",
+    "description": "Experience the future of driving with this cutting-edge electric vehicle.  Offering instant torque and a smooth, silent ride, it's perfect for the eco-conscious driver.",
+    "image": "./images/model_3.jpeg"
+  },
+  {
+    "topSpeed": "155 mph (250 km/h)",
+    "zeroToSixty": "8.2 seconds",
+    "power": "201 hp (149 kw)",
+    "engine": "2.0 liter turbocharged i4",
+    "tagLine": "Adventure awaits.",
+    "description": "This versatile SUV combines rugged capability with everyday practicality.  Take on any terrain with confidence and style.",
+    "image": "./images/terra.jpeg"
+  }
+]

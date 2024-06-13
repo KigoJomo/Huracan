@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
-// imported fonts are 'JetBrains Mono' 'Montserrat' and 'Raleway'
-
 @font-face {
   font-family: "IDroid";
   src: url("../fonts/IDroid-Bold/IDroid.otf");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
 
 @font-face {
@@ -29,10 +30,13 @@
   --background: #050505;
   --background-light: #222222;
   --primary: #ffffff;
+  --secondary: #b4b4b4;
   --base-font-size: clamp(12px, 1.2vw, 32px);
+  --h4-font-size: calc(var(--base-font-size) * 1);
   --h3-font-size: calc(var(--base-font-size) * 1.2);
   --h2-font-size: calc(var(--base-font-size) * 1.618);
   --h1-font-size: calc(var(--h2-font-size) * 1.618);
+  --small-font-size: calc(var(--base-font-size) / 1.3);
 }
 
 * {
@@ -47,6 +51,11 @@
 
 p {
   font-size: var(--base-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+  line-height: calc(var(--h4-font-size) / 1.4);
 }
 
 h3 {
@@ -73,6 +82,41 @@ a {
   text-decoration: none;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+button,
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-size: var(--small-font-size);
+  background-color: var(--background-light);
+  padding: 12px 16px;
+  border-radius: 24px;
+  border: none;
+  min-height: calc(var(--small-font-size) + 24px);
+  max-height: calc(var(--small-font-size) + 24px);
+
+  p {
+    font-size: inherit;
+  }
+}
+
 html {
   height: 100dvh;
   width: 100vw;
@@ -87,16 +131,14 @@ html {
       display: none;
     }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    @extend .column;
     gap: 0;
 
     position: relative;
 
-    header{
+    header {
       position: absolute;
+      z-index: 99;
       width: 100%;
       display: flex;
       align-items: center;
@@ -104,20 +146,20 @@ html {
 
       padding: 24px;
 
-      .logo{
-        h3{
-          font-family: 'IDroid-Bold';
+      .logo {
+        h3 {
+          font-family: "IDroid-Bold";
         }
       }
 
-      .left{
+      .left {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: 24px;
 
         .icon,
-        .material-symbols-outlined{
+        .material-symbols-outlined {
           background: var(--background-light);
           height: 32px;
           aspect-ratio: 1;
@@ -125,6 +167,7 @@ html {
           align-items: center;
           justify-content: center;
           border-radius: 50%;
+          border: 1px solid var(--secondary);
         }
       }
     }
@@ -135,33 +178,167 @@ html {
       padding: 16px;
       flex-shrink: 0;
 
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      @extend .column;
       justify-content: center;
-      gap: 32px;
     }
 
     #hero {
       position: relative;
-      padding-top: 72px;
+      // top, right, bottom, left
+      padding: 10% 32px 16px 10%;
+      gap: 0;
+      background: url("../images/huracan.jpeg") center/cover no-repeat;
 
       #mySVG {
         position: absolute;
         top: 16px;
+        left: 16px;
         width: calc(100% - 32px);
         height: calc(100% - 32px);
+        pointer-events: none;
       }
 
       #hero-title {
         font-family: "IDroid";
         font-size: 6rem;
-        transform: rotateZ(-90deg);
         position: absolute;
         left: -12vw;
+        top: 50%;
+        transform: translateY(50%) rotateZ(-90deg);
 
-        color: var(--background);
-        text-shadow: 0px 0px 3px var(--primary);
+        color: transparent;
+        -webkit-text-stroke-width: .01vw;
+        -webkit-text-stroke-color: var(--primary);
+      }
+
+      .cars-container {
+        width: 100%;
+        height: 85%;
+        @extend .column;
+        gap: 2%;
+        padding-right: 6vw;
+
+        border: 1px solid transparent;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: var(--secondary);
+          background-clip: content-box;
+          border-right: 2px solid transparent;
+          border-left: 2px solid transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--primary);
+          border-radius: 8px;
+        }
+
+        .car {
+          // border: 1px solid var(--primary);
+          width: 100%;
+          height: 98%;
+          padding: 16px 0;
+          flex-shrink: 0;
+          scroll-snap-align: start;
+
+          @extend .column;
+          align-items: flex-end;
+          justify-content: space-between;
+          .car-details {
+            @extend .row;
+            gap: 7.5vw;
+
+            .car-detail {
+              @extend .column;
+              align-items: flex-end;
+              gap: 8px;
+
+              .value {
+                color: var(--secondary);
+                font-size: var(--small-font-size);
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          .desc {
+            width: 30%;
+            @extend .column;
+            align-items: flex-end;
+            gap: 8px;
+
+            p {
+              text-align: right;
+              text-transform: capitalize;
+              font-size: var(--small-font-size);
+              line-height: calc(var(--small-font-size) * 1.8);
+              color: var(--secondary);
+            }
+          }
+        }
+      }
+
+      .bottom {
+        position: relative;
+        width: 100.5%;
+        height: 15%;
+        @extend .row;
+        gap: 5vw;
+        justify-content: flex-end;
+
+        .indicators {
+          @extend .row;
+          gap: 8px;
+
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+
+          .indicator {
+            height: 4px;
+            width: 1.5vw;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            background: transparent;
+          }
+          .active {
+            background: var(--primary);
+          }
+        }
+
+        .CTA {
+          @extend .row;
+          gap: 0;
+
+          .material-symbols-outlined {
+            aspect-ratio: 1;
+          }
+
+          .linker {
+            width: 16px;
+            height: 8px;
+            background: var(--background);
+          }
+
+          .button,
+          .linker {
+            box-shadow: 4px -4px 0px 4px #000000;
+          }
+        }
+
+        .scroll-buttons {
+          @extend .column;
+          gap: 8px;
+
+          button {
+            padding: 4px 4px;
+            min-height: 24px;
+            font-size: 0.6rem;
+          }
+        }
       }
     }
   }

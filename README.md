@@ -1,56 +1,44 @@
-# Project Name
+# Huracan Project
 
 Huracan - Vulcan - Huayran Web Ui Landing Page Design Concept.
 
 ## Table of Contents (Optional)
 
-- [Project Name](#project-name)
+- [Huracan Project](#huracan-project)
   - [Table of Contents (Optional)](#table-of-contents-optional)
   - [About the Project](#about-the-project)
   - [Built With](#built-with)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [License](#license)
   - [Contact](#contact)
-  - [Acknowledgments](#acknowledgments)
 
 ## About the Project
 
-[A more detailed description of what your project does. Include any links to relevant resources or demos.]
+Huracan - Vulcan - Huayran Web Ui Landing Page Design.
 
 ## Built With
 
-- [List of technologies or frameworks used]
+- HTML
+- JavaScript
+- CSS (Scss)
 
 ## Getting Started
 
+To get started with this project, follow these steps:
+
+1. *Clone the Repository:*
+
+   ``` bash
+   git clone https://github.com/KigoJomo/Huracan.git
+   ```
+
+2. *Start Live-Server in VS Code(Optional)*
+    Open [127.0.0.1:5500](127.0.0.1:5500) in your browser
+
 ### Prerequisites
 
-[List any software or libraries that need to be installed before using your project]
-
-### Installation
-
-[Instructions on how to install your project. You can include code snippets here]
-
-## Usage
-
-[Instructions on how to use your project, including examples]
-
-## Contributing
-
-[If you welcome contributions, explain how users can contribute. Include links to your contribution guidelines if applicable]
-
-## License
-
-[Specify the license under which your project is distributed]
+Live Sass compiler (to compile .scss files into css)
 
 ## Contact
 
-[Information on how to contact you, like email address or links to social media profiles]
-
-## Acknowledgments
-
-[Optional: Thank any contributors or external resources that helped with the project]
+Feel free to reach out to me via email [kigojomo@gmail.com](kigojomo@gmail.com) for any enquiries or clarification.
